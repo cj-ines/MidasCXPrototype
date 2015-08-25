@@ -1,0 +1,18 @@
+<div class="page-wrapper">
+	<div class="page-header">
+		<h2>Reports <c-subheader></c-subheader></h2>
+	</div>
+	<ol class="breadcrumb">
+		<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+	 	<li class="active">Reports</li>
+	</ol>
+
+	<ul class="nav nav-pills  tab-pill">
+		<li ui-sref-active="active"><a ui-sref=".performance-map">Performance Map</a></li>
+		<li ui-sref-active="active"><a ui-sref=".word-cloud">Word Cloud</a></li>
+		<li ui-sref-active="active"><a ui-sref=".customized-reports">Customized Reports</a></li>
+	</ul>
+
+	<ui-view auto-scroll="false" class="animated fadeInLeft"></ui-view>
+	
+</div>

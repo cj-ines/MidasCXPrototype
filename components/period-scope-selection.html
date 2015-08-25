@@ -1,0 +1,31 @@
+<div class="component-wrapper">
+	<fieldset class="perimeter-selection inverse">
+    <legend><i class="glyphicon glyphicon-calendar"></i> Period Scope</legend>
+    <div class="btn-group-vertical full-width">
+      <button 
+        ng-repeat="option in c.options" 
+        class="btn btn-block" 
+        ng-click="c.setActive($index)"
+        ng-class="{'btn-primary': c.isActive($index), 'btn-default': !c.isActive($index)}">
+          {{option}}
+      </button>
+    </div>
+    <div ng-if="c.isCustom()" class="animated fadeInDown">
+      <br>
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input type="text" ui-date class="form-control" placeholder="From">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input type="text" ui-date class="form-control" placeholder="To">
+          </div>
+        </div>
+      </form>
+    </div>
+  </fieldset>
+</div>

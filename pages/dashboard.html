@@ -1,0 +1,83 @@
+<div class="page-wrapper" ng-controller="DashboardController as c" ng-init="c.initialize()">
+	<div class="page-header">
+		<h2>Dashboard <c-subheader></c-subheader></h2>
+	</div>
+	<ol class="breadcrumb">
+	 	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+	</ol>
+	<div class="row">
+
+		<div class="col-md-6 col-lg-3">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span class="panel-title">Customer Satisfaction</span>
+					<div class="pull-right">
+						<i class="fa fa-arrow-circle-right"></i> <a ui-sref="scores.csi">Scores</a>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div id="csiRadial"></div>
+				</div>
+			</div>
+		    
+		  <div class="panel panel-default">
+				<div class="panel-heading">
+					<span class="panel-title">Net Promoter Score</span>
+					<div class="pull-right">
+						<i class="fa fa-arrow-circle-right"></i> <a ui-sref="scores.nps">Scores</a>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div id="npsRadial"></div>
+				</div>
+			</div>
+		
+		</div>
+
+		<div class="col-md-6 col-lg-5">
+			<div class="panel panel-default" ng-controller="TicketsController as tickets">
+				<div class="panel-heading">
+					<span class="panel-title">Customer Tickets</span>
+					<div class="pull-right">
+						<i class="fa fa-arrow-circle-right"></i> <a ui-sref="tickets">Tickets</a>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-4">
+							<div c-ticket-box number="1" box-type="info" caption="New"></div>
+						</div>
+						<div class="col-sm-4">
+							<div c-ticket-box number="3" box-type="danger" caption="Open"></div>
+						</div>
+						<div class="col-sm-4">
+							<div c-ticket-box number="9" box-type="success" caption="Closed"></div>
+						</div>
+					</div>
+					<div class="cards">
+						<div class="row" ng-repeat="ticket in tickets.tickets">
+							<div class="col-md-3">
+								<c-ticket-status label="{{ticket.status}}"></c-ticket-status>
+							</div>
+							<div class="col-md-9">
+								{{ticket.subject}}
+							</div>
+							<div class="col-lg-12">
+								<small>{{ticket.priority}}</small>  <small>{{ticket.dateCreated}}</small>
+								<div class="pull-right">
+									<button ng-hide="ticket.status === 'closed'" class="btn btn-xs btn-default">Take Action</button>
+									<a ui-sref="view-ticket({ticketId:tickets.tickets.indexOf(ticket)})" class="btn btn-xs btn-default">View</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6 col-lg-4">
+			<div c-social-feed></div>
+		</div>
+	</div>
+</div>

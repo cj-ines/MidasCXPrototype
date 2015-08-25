@@ -1,0 +1,19 @@
+body {
+
+}
+.navbar-midas {
+	border-bottom: #ccc solid 4px;
+	z-index: 1031;
+	
+}
+
+.btn-default {
+	background-color: #f3f3f3;
+	color: #555;
+	border-color: #ccc;
+}
+
+.btn-default:hover {
+	background-color: #ccc;
+	color: #555;
+}

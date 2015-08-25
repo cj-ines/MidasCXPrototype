@@ -1,0 +1,38 @@
+[
+	{
+		"caseId": 4147599,
+		"overall": 100,
+		"product": "exhaust",
+		"dateOfCall": "2014-02-06"
+	}, {
+		"caseId": 4147534,
+		"overall": 94.2,
+		"product": "exhaust",
+		"dateOfCall": "2014-02-14"
+	}, {
+		"caseId": 4147535,
+		"overall": 98.1,
+		"product": "oil change",
+		"dateOfCall": "2014-02-13"
+	}, {
+		"caseId": 4147569,
+		"overall": 88.4,
+		"product": "exhaust",
+		"dateOfCall": "2014-02-17"
+	}, {
+		"caseId": 4147588,
+		"overall": 92.2,
+		"product": "exhaust",
+		"dateOfCall": "2014-02-17"
+	}, {
+		"caseId": 4147581,
+		"overall": 87.6,
+		"product": "exhaust",
+		"dateOfCall": "2014-02-21"
+	}, {
+		"caseId": 4147580,
+		"overall": 100,
+		"product": "oil change",
+		"dateOfCall": "2014-02-22"
+	}
+]

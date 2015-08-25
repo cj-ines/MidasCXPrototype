@@ -1,0 +1,39 @@
+
+{
+	"shops": [{
+		"code": 9584,
+		"name": "6208-48th Avenue",
+		"score": 100
+	}, {
+		"code": 9356,
+		"name": "34 Muir Drive",
+		"score": 92.4
+	}, {
+		"code": 9357,
+		"name": "120 Wye Road",
+		"score": 90.1
+	}, {
+		"code": 9353,
+		"name": "3408-99th Street",
+		"score": 89.6
+	}, {
+		"code": 9303,
+		"name": "6623 MacLead Trail S.W.",
+		"score": 89.3
+	}, {
+		"code": 9355,
+		"name": "13010-50th Street",
+		"score": 89.1
+	}, {
+		"code": 9304,
+		"name": "556-64th Avenue N.E.",
+		"score": 88.7
+	}],
+	"owners": [{
+		"code": "MO8220",
+		"name": "Cris Walker"
+		}, {
+		"code": "MO8220",
+		"name": "Martin Austin"
+	}]
+}

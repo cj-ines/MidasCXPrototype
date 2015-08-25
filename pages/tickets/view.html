@@ -1,0 +1,104 @@
+<div class="page-wrapper" ng-controller="TicketsController as c" ng-init="c.initialize()">
+  <div class="page-header">
+    <h3>Tickets <c-subheader></c-subheader></h3>
+  </div>
+  
+  <ol class="breadcrumb">
+    <li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a ui-sref="tickets">View Ticket</a></li>
+    <li class="active">Ticket ID 400{{c.getTicketId()}}</li>
+  </ol>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="view-ticket">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="cust-info">
+              <strong>Customer Info</strong>
+              <div class="customer-profile row">
+                <div class="col-md-2"><img src="img/user-default.jpg" class="customer-picture"></div>
+                <div class="customer-details col-md-10">
+                  <h4><a ui-sref="view-customer">John Beckham</a></h4>
+                  <ul class="c-list">
+                    <li><i class="fa fa-car"></i> Red Mustang</li>
+                    <li><i class="fa fa-wrench"></i> Oil Change</li>
+                    <li><i class="fa fa-map-marker"></i> 1143</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-lg-2">
+            <strong>Status</strong>
+          </div>
+          <div class="col-md-9 col-lg-10">
+            <c-ticket-status label="{{c.tickets[c.getTicketId()].status}}"></c-ticket-status>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-lg-2">
+            <strong>Subject</strong>
+          </div>
+          <div class="col-md-9 col-lg-10">
+            {{c.tickets[c.getTicketId()].subject}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-lg-2">
+            <strong>Created</strong>
+          </div>
+          <div class="col-md-9 col-lg-10">
+            {{c.tickets[c.getTicketId()].dateCreated}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-lg-2">
+            <strong>Description</strong>
+          </div>
+          <div class="col-md-9 col-lg-10">
+            <p>
+              Nam pharetra nibh eu felis tristique, nec condimentum sapien semper. Quisque sagittis suscipit quam, non cursus sapien semper a. Phasellus at consequat mauris, vel ultricies nisl. Sed ac malesuada diam. Curabitur posuere, ex eu lacinia ultrices, tortor lacus laoreet nunc, ac bibendum lectus augue ut ante
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <strong>Comments</strong>
+            <div class="ticket-comments">
+              <div ng-repeat="comment in c.tickets[c.getTicketId()].comments">
+                <c-comment
+                  comment-author="{{comment.author}}"
+                  comment-date-time="{{comment.dateTime}}"
+                  comment-text-body="{{comment.textBody}}">
+                </c-comment>
+              </div>
+            </div>
+            <br>
+            <strong>Add Comment</strong>
+            <textarea class="form-control" ng-model="c.newComment.textBody"></textarea>
+            <button class="btn btn-default btn-sm" ng-click="c.postComment(c.tickets[c.getTicketId()], c.newComment)">Post comment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 hidden-xs">
+      <button class="btn" ng-click="c.addToFavourites(c.getTicketId())"
+        ng-class="{'btn-default':!c.tickets[c.getTicketId()].favorite,'btn-primary':c.tickets[c.getTicketId()].favorite}">
+        <i class="fa fa-star"></i> Favorite
+      </button>
+      <button class="btn btn-default"><i class="fa fa-download"></i> Export</button>
+      <button class="btn btn-default"><i class="fa fa-share-square"></i> Share</button>
+      <br>
+      
+      <h4>History</h4>
+      <div class="ticket-history">
+        <strong>Anthony Williams</strong> added this to his favorite. <br><small>3h ago</small><br>
+        <strong>Mark Jacob</strong> shared this ticket to <strong>Skye Shannon</strong> <br><small>3h 21m ago</small>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,50 @@
+<div class="modal-header">
+	My Enrollment
+</div>
+<div class="modal-body">
+	<div class="form">
+		<fieldset class="perimeter-selection inverse">
+			<legend><i class="fa fa-user-secret"></i> MYSTERY SHOPPING</legend>
+			<div class="form-group">
+				<label class="control-label col-xs-12">How many visits per month
+					<select class="form-control input-sm">
+						<option>Never</option>
+						<option selected="selected">Once</option>
+						<option>Twice</option>
+					</select>
+				</label>
+				<label class="control-label col-xs-12">What type of visits
+					<select class="form-control input-sm">
+						<option>Rotate Both</option>
+						<option>Oil Change</option>
+						<option>Brake</option>
+					</select>
+				</label>
+			</div>
+		</fieldset>
+	</div>
+
+	<div class="form">
+		<fieldset class="perimeter-selection inverse">
+			<legend><i class="fa fa-phone-square"></i> MYSTERY CALL</legend>
+			<div class="form-group">
+				<label class="control-label col-xs-12">How many calls per month
+					<input type="number" class="form-control input-sm" value="1"></label>
+				</label>
+				<label class="control-label col-xs-12">What type of visits
+					<select class="form-control input-sm">
+						<option>Rotate Both</option>
+						<option>Oil Change</option>
+						<option>Exhaust</option>
+					</select>
+				</label>
+			</div>
+		</fieldset>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="modal.close()">Apply to all my shops</button>
+	<button class="btn btn-default" ng-click="modal.close()">Apply to selected shop</button>
+	<button class="btn btn-default" ng-click="modal.dismiss()">Cancel</button>
+</div>
+</div>

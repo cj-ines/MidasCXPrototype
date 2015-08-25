@@ -1,0 +1,45 @@
+[
+	{
+		"mysteryID":37760,
+		"visitType":"brake",
+		"reportDate":"2015-07-01",
+		"score":66.7,
+		"pdf":"http://insite.intelli-shop.com/clients/ClientShopView.php?JobID=4045816&access=17a6ba6c51"
+	}, {
+		"mysteryID":37731,
+		"visitType":"oil",
+		"reportDate":"2015-07-02",
+		"score":84.4,
+		"pdf": "http://insite.intelli-shop.com/clients/ClientShopView.php?JobID=4038622&access=27af6091ef"
+	}, {
+		"mysteryID":37822,
+		"visitType":"brake",
+		"reportDate":"2015-07-02",
+		"score":66.7,
+		"pdf":"http://insite.intelli-shop.com/clients/ClientShopView.php?JobID=4021362&access=4f021f9b91"
+	}, {
+		"mysteryID":37487,
+		"visitType":"oil",
+		"reportDate":"2015-07-02",
+		"score":66.7,
+		"pdf":"http://insite.intelli-shop.com/clients/ClientShopView.php?JobID=4053333&access=fe099737ec"
+	}, {
+		"mysteryID":37620,
+		"visitType":"brake",
+		"reportDate":"2015-07-05",
+		"score":83.2,
+		"pdf":"http://insite.intelli-shop.com/clients/ClientShopView.php?JobID=4053333&access=fe099737ec"
+	}, {
+		"mysteryID":36720,
+		"visitType":"brake",
+		"reportDate":"2015-07-08",
+		"score":87.2,
+		"pdf":"http://insite.intelli-shop.com/clients/ClientShopView.php?JobID=4035721&access=7bd2ad9552"
+	}, {
+		"mysteryID":36720,
+		"visitType":"brake",
+		"reportDate":"2015-07-08",
+		"score":59.9,
+		"pdf":"http://insite.intelli-shop.com/clients/ClientShopView.php?JobID=4035721&access=7bd2ad9552"
+	}
+]

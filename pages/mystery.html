@@ -1,0 +1,22 @@
+<div class="page-wrapper" ng-controller="MysteryCallVisitController as c">
+	<div class="page-header">
+		<h2>Mystery Calls &amp; Visits <c-subheader></c-subheader></h2> 
+	</div>
+	<ol class="breadcrumb">
+		<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+	 	<li class="active">Mystery Calls &amp; Visits</li>
+	</ol>
+	<ul class="nav nav-pills  tab-pill">
+		<li ui-sref-active="active"><a ui-sref=".calls"><i class="fa x-fa-phone"></i> Mystery calls</a></li>
+		<li ui-sref-active="active"><a ui-sref=".visits"><i class="fa x-fa-user"></i> Mystery visits</a></li>
+		<li ui-sref-active="active"><a ui-sref=".enrollment"><i class="fa x-fa-cog"></i> Enrollment</a></li>
+	</ul>
+	<div class="row">
+		<div class="col-lg-8 col-md-12">
+			<div ui-view autoscroll="false" class="animated fadeIn">
+				loading.
+			</div>
+		</div>
+	</div>
+	
+</div>

@@ -1,0 +1,129 @@
+<div class="page-wrapper" ng-init="c.initialize()">
+	<div class="page-header">
+		<h2>Scores <c-subheader></c-subheader></h2> 
+	</div>
+	<ol class="breadcrumb">
+		<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+	 	<li class="active">Scores</li>
+	</ol>
+	
+	<ul class="nav nav-pills  tab-pill">
+		<li ui-sref-active="active"><a ui-sref=".nps"> Net Promoter Score</a></li>
+		<li ui-sref-active="active"><a ui-sref=".csi"> Customer Satisfaction Index</a></li>
+	</ul>
+	
+	<ui-view autoscroll="false" class="fadeInLeft animated"></ui-view>
+	
+	<div class="row">
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span class="panel-title"> <i class="fa fa-trophy"></i> Leaderboards</span>
+				</div>
+				<div class="panel-body">
+					<c-leader-boards></c-leader-boards>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span class="panel-title"> <i class="fa fa-globe"></i> Scores</span>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="pull-left">
+								<select class="form-control input-sm">
+									<option>Countries</option>
+									<option>Regions</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="table table-lite">
+						<div class="row table-header">
+							<div class="col-md-4">
+								Country
+							</div>
+							<div class="col-md-1">
+								CSI
+							</div>
+							<div class="col-md-1">
+								NPS
+							</div>
+							<div class="col-md-1">
+								<c-nps-badge nps-status="PRO"></c-nps-badge>
+							</div>
+							<div class="col-md-1">
+								<c-nps-badge nps-status="PAS"></c-nps-badge>
+							</div>
+							<div class="col-md-1">
+								<c-nps-badge nps-status="DET"></c-nps-badge>
+							</div>
+							<div class="col-md-1">
+								Tickets
+							</div>
+							<div class="col-md-1">
+								Survey
+							</div>
+						</div>
+						<div class="row odd">
+							<div class="col-md-4">
+								United States
+							</div>
+							<div class="col-md-1">
+								<b>81.2</b>
+							</div>
+							<div class="col-md-1">
+								<b>78.2</b>
+							</div>
+							<div class="col-md-1">
+								83.0
+							</div>
+							<div class="col-md-1">
+								12.2
+							</div>
+							<div class="col-md-1">
+								5.8
+							</div>
+							<div class="col-md-1">
+								<a ui-sref="tickets">140</a>
+							</div>
+							<div class="col-md-1">
+								41760
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								Canada
+							</div>
+							<div class="col-md-1">
+								<b>82.2</b>
+							</div>
+							<div class="col-md-1">
+								<b>76.2</b>
+							</div>
+							<div class="col-md-1">
+								80.4
+							</div>
+							<div class="col-md-1">
+								16.4
+							</div>
+							<div class="col-md-1">
+								4.2
+							</div>
+							<div class="col-md-1">
+								<a ui-sref="tickets">71</a>
+							</div>
+							<div class="col-md-1">
+								11719
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

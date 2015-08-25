@@ -1,0 +1,34 @@
+<div>
+	<div class="row dtable">
+		<div class="col-md-12">
+			<div class="pull-left">
+				<select class="form-control input-sm">
+					<option>Shops</option>
+					<option>Owners</option>
+					<option>Regions</option>
+				</select>
+			</div>
+			<div class="pull-left">
+				<select class="form-control input-sm">
+					<option>NPS</option>
+					<option>CSI</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="table table-lite">
+		<div class="row" ng-repeat="leader in c.leaders.shops" ng-class="{'odd':$even}">
+			<div class="col-sm-2">
+				<strong>{{$index + 1}}</strong>
+			</div>
+			<div class="col-sm-8">
+				<a>Midas {{leader.code}}</a>
+				<br><small>{{leader.name}}</small>
+			</div>
+			<div class="col-sm-2">
+				<span>{{leader.score}}</span>
+			</div>
+		</div>
+	</div>
+</div>

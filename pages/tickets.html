@@ -1,0 +1,100 @@
+<div class="page-wrapper" ng-controller="TicketsController as c" ng-init="c.initialize()">
+  <div class="page-header">
+    <h3>Tickets <c-subheader></c-subheader></h3>
+  </div>
+  
+  <ol class="breadcrumb">
+    <li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Tickets</li>
+  </ol>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row sm-gutter">
+            <div class="col-xs-4">
+              <div c-ticket-box number="3" box-type="danger" caption="Open"></div>
+            </div>
+            <div class="col-xs-4">
+              <div c-ticket-box number="1" box-type="warning" caption="Pending"></div>
+            </div>
+            <div class="col-xs-4">
+              <div c-ticket-box number="9" box-type="success" caption="Closed"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div id="resolutionLineGraph"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="panel-title"><i class="fa fa-flag"></i> List of Tickets</span>
+        </div>
+        <div class="panel-body">
+          <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">All</a></li>
+            <li role="presentation"><a href="#">Open</a></li>
+            <li role="presentation"><a href="#">Pending</a></li>
+            <li role="presentation"><a href="#">Closed</a></li>
+          </ul>
+          <br>
+          <div class="table table-lite">
+            <div class="row table-header hidden-md hidden-xs">
+              <div class="col-lg-1">
+                Status
+              </div>
+              <div class="col-lg-5">
+                Subject
+              </div>
+              <div class="col-lg-1">
+                Priority
+              </div>
+              <div class="col-lg-1">
+                Opened
+              </div>
+              <div class="col-lg-2">
+                Assigned
+              </div>
+              <div class="col-lg-1">
+                Store
+              </div>
+              <div class="col-lg-1">
+                -
+              </div>
+            </div>
+            <div class="row" ng-repeat="ticket in c.tickets" ng-class="{'odd':$odd}">
+              <div class="col-lg-1 col-md-3">
+                <c-ticket-status label="{{ticket.status}}"></c-ticket-status>
+              </div>
+              <div class="col-lg-5 col-md-9">
+                <a ui-sref="view-ticket({ticketId:c.tickets.indexOf(ticket)})">{{ticket.subject}}</a>
+              </div>
+              <div class="col-lg-1">
+                {{ticket.priority}}
+              </div>
+              <div class="col-lg-1">
+                {{ticket.dateCreated}}
+              </div>
+              <div class="col-lg-2">
+                {{ticket.assigned}}
+              </div>
+              <div class="col-lg-1">
+                {{ticket.store}}
+              </div>
+              <div class="col-lg-1 col-xs-6">
+                <button class="btn btn-sm btn-default btn-inline"><i class="fa fa-cog"></i> Actions</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

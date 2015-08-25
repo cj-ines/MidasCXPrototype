@@ -1,0 +1,21 @@
+<div class="component-wrapper" ng-if="c.show()">
+	<fieldset class="perimeter-selection inverse">
+    <legend><i class="fa fa-user-secret"></i> Mystery Visits &amp; Calls </legend>
+    <div class="btn-group-vertical full-width">
+  	  <button class="btn" ui-sref-active="btn-primary" ui-sref="mystery.calls">
+        Calls
+      </button>
+      <button class="btn" ui-sref-active="btn-primary" ui-sref="mystery.visits">
+        Visits
+      </button>
+    </div>
+  </fieldset>
+  <fieldset class="perimeter-selection inverse">
+    <legend><i class="fa fa-cog"></i> Settings </legend>
+    <div class="btn-group-vertical full-width">
+      <button class="btn btn-default" ui-sref="mystery-enrollment">
+        Enrollment
+      </button>
+    </div>
+  </fieldset>
+</div>

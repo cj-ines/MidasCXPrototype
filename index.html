@@ -1,0 +1,156 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Midas CX </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<!---link rel="stylesheet" href="css/bootstrap-theme.css">-->
+        <link rel="stylesheet" href="css/jasny-bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/vendor/radialProcess.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/midas.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body ng-app="zoop.cxPrototype">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-midas" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle pull-left" data-toggle="offcanvas" data-target="#scopeMenu" data-canvas="body">
+            <span class="fa fa-cog  fa-inverse fa-lg"></span>
+          </button>
+          <button type="button" class="navbar-toggle pull-right" data-toggle="offcanvas" data-target="#sideMenu" data-canvas="body">
+            <span class="fa fa-bars fa-inverse fa-lg"></span>
+          </button>
+          <a class="navbar-brand" ui-sref="dashboard">
+            <img src="img/logo.png" class="main-logo">
+          </a>
+          <a class="navbar-brand" ui-sref="dashboard">
+            Customer Experience
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse main-wrap wrap-offset">
+          <ul class="nav navbar-nav pull-right">
+            <li><a><i class="glyphicon glyphicon-user"></i> Account</a></li>
+          </ul>
+          <ul class="nav navbar-nav pull-left">
+            <li ui-sref-active="active"><a ui-sref="dashboard">Dashboard</a></li>
+            <li ui-sref-active="active"><a ui-sref="tickets">Tickets</a></li>
+            <li ui-sref-active="active"><a ui-sref="scores.nps">Scores</a></li>
+            <li ui-sref-active="active" class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle"> Voice of the Customer <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li ui-sref-active="active"><a ui-sref="surveys">Surveys</a></li>
+                  <li ui-sref-active="active"><a ui-sref="review-tracker">Review Tracker</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" ui-sref-active="active">
+				<a data-toggle="dropdown" class="dropdown-toggle">Mystery Calls &amp; Visits <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li ui-sref-active="active"><a ui-sref="mystery.calls">Calls</a></li>
+					<li ui-sref-active="active"><a ui-sref="mystery.visits">Visits</a></li>
+					<li ui-sref-active="active"><a ui-sref="mystery.enrollment">Enrollment</a></li>
+				</ul>
+			</li>
+            <li ui-sref-active="active"><a ui-sref="customers">Customers</a></li>
+            <li ui-sref-active="active"><a ui-sref="reports">Reports</a></li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    <nav id="sideMenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
+      <div class="hidden-lg">
+        <ul class="nav navmenu-nav">
+          <li ui-sref-active="active"><a ui-sref="dashboard">Dashboard</a></li>
+            <li ui-sref-active="active"><a ui-sref="tickets">Tickets</a></li>
+            <li ui-sref-active="active"><a ui-sref="scores.nps">Scores</a></li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle"> Voice of the Customer <b class="caret"></b></a>
+                <ul class="dropdown-menu navmenu-nav">
+                  <li ui-sref-active="active"><a ui-sref="surveys">Surveys</a></li>
+                  <li ui-sref-active="active"><a ui-sref="review-tracker">Review Tracker</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" ui-sref-active="active">
+				<a data-toggle="dropdown" ui-sref="mystery" class="dropdown-toggle">Mystery Calls &amp; Visits <b class="caret"></b></a>
+				<ul class="dropdown-menu navmenu-nav">
+					<li ui-sref-active="active"><a ui-sref="mystery.calls">Calls</a></li>
+					<li ui-sref-active="active"><a ui-sref="mystery.visits">Visits</a></li>
+					<li ui-sref-active="active"><a ui-sref="mystery.enrollment">Enrollment</a></li>
+				</ul>
+			</li>
+            <li ui-sref-active="active"><a ui-sref="customers">Customers</a></li>
+            <li ui-sref-active="active"><a ui-sref="reports">Reports</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="scopeMenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation">
+      <br>
+      <segment c-perimeter-scope-selection></segment>
+      <segment c-period-scope-selection></segment>
+    </nav>
+    <div class="container-fluid">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-wrap">
+            <div data-ui-view class="animated fadeIn"></div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <footer>
+        <p>&copy; Company 2015</p>
+      </footer>
+    </div> <!-- /container -->
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/vendor/jquery-ui.js"></script>
+        <script src="js/vendor/angular.min.js"></script>
+        <script src="js/vendor/angular-ui-router.min.js"></script>
+        <script src="js/vendor/angular-ui-date.js"></script>
+		<script src="js/vendor/angular-ui-bootstrap.min.js"></script>
+        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDMO_gv0HRUXzh8AWpazB4g2LOI7irHvIU'></script>
+        <script src="js/vendor/lodash.js"></script>
+        <script src="js/vendor/angular-google-maps.min.js"></script>
+        <script src="js/vendor/highcharts.js"></script>
+        <script src="js/vendor/highcharts-more.js"></script>
+        <script src="js/vendor/highcharts-solid-gauge.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/jasny-bootstrap.min.js"></script>
+        <script src="js/vendor/d3.min.js"></script>
+        <script src="js/vendor/radialProgress.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/directives.js"></script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            /*(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+            */
+        </script>
+    </body>
+</html>
