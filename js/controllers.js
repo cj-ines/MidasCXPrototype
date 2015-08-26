@@ -253,4 +253,79 @@
 		scope.map = { center: { latitude: 43.81297600000001, longitude: -79.5227562 }, zoom:5 };
 	}]);
 
+	app.controller('CustomizedReportsController',['ChartService', function (chart) {
+		var scope = this;
+
+		scope.activeType = '';
+		scope.activeKpi = {
+			name: 'Net Promoter Score',
+			categories: ['Promoters','Passives', 'Detractors']
+		};
+
+		scope.types = [{
+			name: 'Type of work',
+			categories: ['Brakes', 'LOF', 'Exhaust', 'SSP', 'Tires', 'Tire Service']
+		}, {
+			name: 'Amount spent',
+			categories: ['<50$', '<100$', '<200%']
+		}, {
+			name: 'Courtesy check',
+			categories: ['Yes', 'No', 'Don\'t Know']
+		}, {
+			name: 'Sample category',
+			categories: ['Option 1', 'Option 2', 'Option 3']
+		}];
+
+		scope.kpis = [{
+			name: 'Net Promoter Score',
+			categories: ['Promoters','Passives', 'Detractors']
+		}, {
+			name: 'Customer Satisfaction Index',
+			categories: ['Build advocates', 'Strengthen friends', 'Recover challenges', 'Save detractors']
+		}];
+
+		scope.setActiveType = function (type) {
+			scope.activeType = type;
+			scope.graphs();
+		};
+
+		scope.isActiveType = function (type) {
+			return scope.activeType === type;
+		};
+
+		scope.setActiveKpi = function (kpi) {
+			scope.activeKpi = kpi;
+			scope.graphs();
+		};
+
+		scope.isActiveKpi = function (kpi) {
+			return scope.activeKpi.name === kpi.name;
+		};
+
+		scope.graphs = function () {
+			var data = [], categories = [];
+			scope.activeKpi.categories.forEach(function (category) {
+				data.push({
+					name: category,
+					data: generateRandomData(scope.activeType.categories.length)
+				});
+			});
+
+			scope.activeType.categories.forEach(function (category) {
+				categories.push(category);
+			});
+
+			chart.createBarGraph('graph', scope.activeType.name + ' Graph', 500, data, categories);
+		};
+
+		function generateRandomData (len) {
+            var numbers = [];
+            for (var i = 0; i < len; i++ ) {
+                numbers.push(Math.random() * 100);
+            }
+            return numbers;
+        };
+
+	}]);
+
 }());

@@ -142,6 +142,38 @@
 				series: seriesData
 			});
 		};
+		scope.createBarGraph = function (name, title, size, seriesData, categories, unit, subtitle) {
+			$('#' + name + 'BarGraph').highcharts({
+				chart: {
+					type: 'bar',
+					height: size,
+				},
+				title: {
+					text: title
+				},
+				subtitile: {
+					text: subtitle
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: unit
+					}
+				},
+				plotOptions: {
+					column: {
+						stacking: 'percent'
+					}
+				},
+				xAxis: {
+					categories: categories
+				},
+				credits: {
+					enabled: false
+				},
+				series: seriesData
+			});
+		};
 
     scope.createRadialProgress = function (name, title, min, max, value, diameter) {
       var radial = radialProgress(document.getElementById(name + 'Radial'))
@@ -184,7 +216,7 @@
 		scope.fetchAllCalls = function () {
 			return $http.get('data/mystery-calls.json');
 		};
-		
+
 		scope.fetchAllVisits = function () {
 			return $http.get('data/mystery-visits.json');
 		};

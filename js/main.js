@@ -77,7 +77,8 @@
       })
       .state('reports.customized-reports', {
         url: '/customized-reports',
-        templateUrl: 'pages/reports/customized-reports.html'
+        templateUrl: 'pages/reports/customized-reports.html',
+        controller: 'CustomizedReportsController as vm'
       })
       .state('tickets', {
         url: '/tickets',

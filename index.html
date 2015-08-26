@@ -35,10 +35,10 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle pull-left" data-toggle="offcanvas" data-target="#scopeMenu" data-canvas="body">
-            <span class="fa fa-cog  fa-inverse fa-lg"></span>
+            <span class="fa fa-cog  fa-lg"></span>
           </button>
           <button type="button" class="navbar-toggle pull-right" data-toggle="offcanvas" data-target="#sideMenu" data-canvas="body">
-            <span class="fa fa-bars fa-inverse fa-lg"></span>
+            <span class="fa fa-bars fa-lg"></span>
           </button>
           <a class="navbar-brand" ui-sref="dashboard">
             <img src="img/logo.png" class="main-logo">
@@ -71,7 +71,14 @@
 				</ul>
 			</li>
             <li ui-sref-active="active"><a ui-sref="customers">Customers</a></li>
-            <li ui-sref-active="active"><a ui-sref="reports">Reports</a></li>
+            <li class="dropdown" ui-sref-active="active">
+                <a data-toggle="dropdown">Reports <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+					<li ui-sref-active="active"><a ui-sref="reports.performance-map">Performance Map</a></li>
+					<li ui-sref-active="active"><a ui-sref="reports.word-cloud">Word Cloud</a></li>
+					<li ui-sref-active="active"><a ui-sref="reports.customized-reports">Customized Reports</a></li>
+				</ul>
+            </li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -98,7 +105,14 @@
 				</ul>
 			</li>
             <li ui-sref-active="active"><a ui-sref="customers">Customers</a></li>
-            <li ui-sref-active="active"><a ui-sref="reports">Reports</a></li>
+            <li ui-sref-active="active">
+                <a data-toggle="dropdown">Reports <b class="caret"></b></a>
+                <ul class="dropdown-menu navmenu-nav">
+					<li ui-sref-active="active"><a ui-sref="reports.performance-map">Performance Map</a></li>
+					<li ui-sref-active="active"><a ui-sref="reports.word-cloud">Word Cloud</a></li>
+					<li ui-sref-active="active"><a ui-sref="reports.customized-reports">Customized Reports</a></li>
+				</ul>
+            </li>
         </ul>
       </div>
     </nav>

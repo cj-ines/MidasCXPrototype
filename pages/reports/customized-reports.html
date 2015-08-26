@@ -1,1 +1,29 @@
-CUSTOMIZED REPORTS
+<div class="row" ng-init="vm.graphs()">
+    <div class="col-md-3 col-lg-2">
+        <Div class="panel panel-default">
+            <div class="panel-heading">
+                <span><i class="fa fa-bars"></i> Select from the following:</span>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item"
+                    ng-repeat="type in vm.types"
+                    ng-click="vm.setActiveType(type)"
+                    ng-class="{'active': vm.isActiveType(type)}">
+                    <strong>{{type.name}}</strong>
+                    <p class="list-group-item-text">
+                        Description will be here.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-9 col-lg-10">
+        <ul class="nav nav-tabs">
+    		<li ng-repeat="kpi in vm.kpis" ng-class="{'active':vm.isActiveKpi(kpi)}">
+                <a ng-click="vm.setActiveKpi(kpi)">{{kpi.name}}</a>
+            </li>
+    	</ul>
+        <div id='graphBarGraph'></div>
+        <h2 ng-if="vm.isActiveType('')">Nothing selected</h2>
+    </div>
+</div>
