@@ -75,10 +75,10 @@
         url: '/word-cloud',
         templateUrl: 'pages/reports/word-cloud.html'
       })
-      .state('reports.customized-reports', {
-        url: '/customized-reports',
-        templateUrl: 'pages/reports/customized-reports.html',
-        controller: 'CustomizedReportsController as vm'
+      .state('reports.charts', {
+        url: '/charts',
+        templateUrl: 'pages/reports/charts.html',
+        controller: 'ChartsController as vm'
       })
       .state('tickets', {
         url: '/tickets',

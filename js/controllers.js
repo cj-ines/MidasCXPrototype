@@ -253,7 +253,7 @@
 		scope.map = { center: { latitude: 43.81297600000001, longitude: -79.5227562 }, zoom:5 };
 	}]);
 
-	app.controller('CustomizedReportsController',['ChartService', function (chart) {
+	app.controller('ChartsController',['ChartService', function (chart) {
 		var scope = this;
 
 		scope.activeType = '';
@@ -315,7 +315,7 @@
 				categories.push(category);
 			});
 
-			chart.createBarGraph('graph', scope.activeType.name + ' Graph', 500, data, categories);
+			chart.createBarGraph('graph', scope.activeType.name + ' ' + scope.activeKpi.name + ' Chart', 500, data, categories);
 		};
 
 		function generateRandomData (len) {
