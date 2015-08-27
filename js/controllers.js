@@ -9,26 +9,26 @@
 		scope.pageName = $state.current.name;
 
 		scope.createNpsGauge = function () {
-			chart.createHalfGauge('nps', 'NPS', 0, 100, 88, 80, '%', 320);
+			chart.createHalfGauge('nps', 'NPS', 0, 100, 88, 80, '%', 250);
 		};
 
 		scope.createCsiGauge = function () {
-			chart.createHalfGauge('csi', 'CSI', 0, 100, 72, 70, '%', 320);
+			chart.createHalfGauge('csi', 'CSI', 0, 100, 72, 70, '%', 250);
 		};
 
 		scope.createCsiRadialProgress = function () {
-			chart.createRadialProgress('csi', '', 0, 100, 89, 260);
+			chart.createRadialProgress('csi', '', 0, 100, 89, 200);
 		};
 
 		scope.createNpsRadialProgress = function () {
-			chart.createRadialProgress('nps', '', 0, 100, 91, 260);
+			chart.createRadialProgress('nps', '', 0, 100, 91, 200);
 		};
 
 		scope.initialize = function () {
-			//scope.createCsiGauge();
-			//scope.createNpsGauge();
-			scope.createCsiRadialProgress();
-			scope.createNpsRadialProgress();
+			scope.createCsiGauge();
+			scope.createNpsGauge();
+			//scope.createCsiRadialProgress();
+			//scope.createNpsRadialProgress();
 		};
 
 	}]);
@@ -281,7 +281,7 @@
 			categories: ['Promoters','Passives', 'Detractors']
 		}, {
 			name: 'Customer Satisfaction Index',
-			categories: ['Build advocates', 'Strengthen friends', 'Recover challenges', 'Save detractors']
+			categories: ['Satisfied', 'Unsatisfied']
 		}];
 
 		scope.setActiveType = function (type) {

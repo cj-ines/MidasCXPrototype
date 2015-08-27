@@ -6,36 +6,38 @@
 	 	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
 	</ol>
 	<div class="row">
-
-		<div class="col-md-6 col-lg-3">
-
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<span class="panel-title">Customer Satisfaction</span>
-					<div class="pull-right">
-						<i class="fa fa-arrow-circle-right"></i> <a ui-sref="scores.csi">Scores</a>
+		<div class="col-md-6 col-lg-4">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<span class="panel-title">Customer Satisfaction</span>
+							<div class="pull-right">
+								<i class="fa fa-arrow-circle-right"></i> <a ui-sref="scores.csi">Scores</a>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div id="csiHalfGauge"></div>
+						</div>
 					</div>
 				</div>
-				<div class="panel-body">
-					<div id="csiRadial"></div>
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+		  				<div class="panel-heading">
+		  					<span class="panel-title">Net Promoter Score</span>
+		  					<div class="pull-right">
+		  						<i class="fa fa-arrow-circle-right"></i> <a ui-sref="scores.nps">Scores</a>
+		  					</div>
+		  				</div>
+		  				<div class="panel-body">
+		  					<div id="npsHalfGauge"></div>
+		  				</div>
+		  			</div>
 				</div>
 			</div>
-		    
-		  <div class="panel panel-default">
-				<div class="panel-heading">
-					<span class="panel-title">Net Promoter Score</span>
-					<div class="pull-right">
-						<i class="fa fa-arrow-circle-right"></i> <a ui-sref="scores.nps">Scores</a>
-					</div>
-				</div>
-				<div class="panel-body">
-					<div id="npsRadial"></div>
-				</div>
-			</div>
-		
 		</div>
 
-		<div class="col-md-6 col-lg-5">
+		<div class="col-md-6 col-lg-4">
 			<div class="panel panel-default" ng-controller="TicketsController as tickets">
 				<div class="panel-heading">
 					<span class="panel-title">Customer Tickets</span>
@@ -55,19 +57,30 @@
 							<div c-ticket-box number="9" box-type="success" caption="Closed"></div>
 						</div>
 					</div>
-					<div class="cards">
-						<div class="row" ng-repeat="ticket in tickets.tickets">
-							<div class="col-md-3">
-								<c-ticket-status label="{{ticket.status}}"></c-ticket-status>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span class="panel-title">
+						Social Media
+						<div class="pull-right"><i class="fa fa-arrow-circle-right"></i> <a ui-sref="review-tracker">Rev. Tracker</a></div>
+					</span>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+								<h1>3.8<small>/5</small></h1>
+								<i class="fa fa-gold fa-star fa-lg"></i><i class="fa fa-gold fa-star fa-lg"></i><i class="fa fa-gold fa-star fa-lg"></i><i class="fa fa-gold fa-star fa-lg"></i><i class="fa fa-gold fa-star-o fa-lg"></i>
+								</div>
 							</div>
-							<div class="col-md-9">
-								{{ticket.subject}}
-							</div>
-							<div class="col-lg-12">
-								<small>{{ticket.priority}}</small>  <small>{{ticket.dateCreated}}</small>
-								<div class="pull-right">
-									<button ng-hide="ticket.status === 'closed'" class="btn btn-xs btn-default">Take Action</button>
-									<a ui-sref="view-ticket({ticketId:tickets.tickets.indexOf(ticket)})" class="btn btn-xs btn-default">View</a>
+						</div>
+						<div class="col-xs-6">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h1>1,413</h1>
+									<strong># Reviews</strong>
 								</div>
 							</div>
 						</div>
@@ -77,6 +90,24 @@
 		</div>
 
 		<div class="col-md-6 col-lg-4">
+			<div class="panel-default panel">
+				<div class="panel-heading">
+					<span class="panel-title">Tip of the day
+						<div class="pull-right">
+							<i class="fa fa-arrow-circle-right"></i> <a ui-sref="reports.customized-reports">Learn more</a>
+						</div>
+					</span>
+				</div>
+				<div class="panel-body">
+					<div class="pull-right">
+						<span class="fa-stack fa-4x">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<i class="fa fa-lightbulb-o fa-stack-1x"></i>
+						</span>
+					</div>
+					<blockquote>"Did you know that clients who recall a courtesy check, remain much more likely to recommend Midas?"</blockquote>
+				</div>
+			</div>
 			<div c-social-feed></div>
 		</div>
 	</div>

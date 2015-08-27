@@ -31,7 +31,7 @@
 				},
 				pane: {
 					center: ['50%', '65%'],
-					size: '90%',
+					size: '98%',
 					startAngle: -90,
 					endAngle: 90,
 					background: {
@@ -57,22 +57,21 @@
 						[0.7, '#DDDF0D'], // yellow
 						[0.9, '#55BF3B'] // red
 					],
-					lineWidth: 0,
-					minorTickInterval: 'auto',
-					tickPixelInterval: 400,
-					tickWidth: 0,
+					lineWidth: 1,
+					minorTickInterval: 5,
+					tickPixelInterval: 0,
+					tickWidth: 2,
 					title: {
 						y: -70,
 						style: {fontSize: '14pt'},
 						enabled: false
 					},
 					labels: {
-						step: 3,
-						rotation: 'auto',
+						step: 1,
 						style: {
 							fontSize: '8pt',
 							color: '#222',
-							offset: 1
+							offset: 10
 						}
 					}
 				},
@@ -94,7 +93,7 @@
 							borderRadius: 5,
 							backgroundColor: null,
 							borderWidth: 0,
-							y: size -230,
+							y: size -270,
 							padding: 3,
 							style: {fontSize: fontSizeSize, fontFamily: 'Arial'}
 						}
@@ -145,7 +144,7 @@
 		scope.createBarGraph = function (name, title, size, seriesData, categories, unit, subtitle) {
 			$('#' + name + 'BarGraph').highcharts({
 				chart: {
-					type: 'bar',
+					type: 'column',
 					height: size,
 				},
 				title: {
