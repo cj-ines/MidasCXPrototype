@@ -8,7 +8,7 @@
 
 		scope.createHalfGauge = function (name, title, min, max, val, target, unit, size) {
 			var range = min + max,
-				fontSizeSize = Math.round(size * 0.10) + 'pt';
+				fontSizeSize = Math.round(size * 0.12) + 'pt';
 
 			$('#' + name + 'HalfGauge').highcharts({
 				chart: {
@@ -21,7 +21,6 @@
 					events: {},
 					height: size
 				},
-
 				title: {
 					text: /*title + ' Last 90 Days'*/'',
 					format: {
@@ -40,13 +39,11 @@
 						outerRadius: '100%',
 						shape: 'arc'
 					},
-
 				},
 
 				tooltip: {
 					enabled: false
 				},
-
 				// the value axis
 				yAxis: {
 
@@ -93,7 +90,7 @@
 							borderRadius: 5,
 							backgroundColor: null,
 							borderWidth: 0,
-							y: size -270,
+							y: size * 0.25,
 							padding: 3,
 							style: {fontSize: fontSizeSize, fontFamily: 'Arial'}
 						}
@@ -219,6 +216,13 @@
 		scope.fetchAllVisits = function () {
 			return $http.get('data/mystery-visits.json');
 		};
+	}]);
+
+	app.service('ReviewsService', ['$http', function ($http) {
+		var scope = this;
+		scope.fetchAll = function () {
+			return $http.get('data/reviews.json')
+		}
 	}]);
 
 }())

@@ -6,6 +6,7 @@
     "store": "1114",
     "dateCreated": "2015-06-02",
     "dateCompleted": "2015-06-05",
+    "customer" : "John Doe",
     "assigned" : "unassigned",
     "comments" : [{
       "author" : "Mark Lucas",
@@ -23,6 +24,7 @@
     "store": "1115",
     "dateCreated": "2015-06-02",
     "dateCompleted": "2015-06-05",
+    "customer" : "Marc Dupont",
     "assigned" : "unassigned",
     "comments" : [{
       "author" : "Mark Lucas",
@@ -36,6 +38,7 @@
     "store": "1144",
     "dateCreated": "2015-06-14",
     "dateCompleted": "2015-06-05",
+    "customer" : "Nikola Tesla",
     "assigned" : "Mark"
   }, {
     "subject": "Cetero ornatus ad his. Meliore pericula ius te.",
@@ -43,6 +46,7 @@
     "store": "1114",
     "status": "closed",
     "dateCreated": "2015-06-11",
+    "customer" : "Willian Tell",
     "dateCompleted": "2015-06-05",
     "assigned" : "Lucas"
   }

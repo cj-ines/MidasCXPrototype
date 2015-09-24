@@ -2,9 +2,11 @@ body {
 
 }
 .navbar-midas {
-	border-bottom: #ccc solid 4px;
+	border-bottom: #747156 solid 4px;
 	z-index: 1031;
-	
+	font-size: 10pt;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .btn-default {
@@ -16,4 +18,27 @@ body {
 .btn-default:hover {
 	background-color: #ccc;
 	color: #555;
+}
+
+.page-header {
+	background: linear-gradient(#fceb47, #eedd34) ;
+	padding: 15px;
+	margin: 0px -15px 15px -15px;
+	/* border-bottom: #E60000 4px solid; */
+	color: #000;
+}
+
+.table-container {
+	border: 1em solid;
+	border-color: #444;
+}
+
+.table {
+	margin-bottom: 0px
+}
+
+.table thead {
+	background: linear-gradient(#fceb47, #eedd34) ;
+	font-size: 12pt;
+	font-weight: bold;
 }

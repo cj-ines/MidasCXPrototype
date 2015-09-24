@@ -1,0 +1,28 @@
+{
+  "name": "cx-dashboard",
+  "version": "0.0.0",
+  "authors": [
+    "Crisdell James Ines <cj.ines@zoop.net>"
+  ],
+  "description": "Midas Prototype",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-ui-bootstrap": "~0.13.4",
+    "angular-ui-date": "~0.0.8",
+    "angular-ui-router": "~0.2.15",
+    "animate.css": "~3.4.0",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "fontawesome#~4.4.0",
+    "jasny-bootstrap": "~3.1.3"
+  }
+}

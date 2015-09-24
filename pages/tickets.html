@@ -45,54 +45,24 @@
             <li role="presentation"><a href="#">Closed</a></li>
           </ul>
           <br>
-          <div class="table table-lite">
-            <div class="row table-header hidden-md hidden-xs">
-              <div class="col-lg-1">
-                Status
-              </div>
-              <div class="col-lg-5">
-                Subject
-              </div>
-              <div class="col-lg-1">
-                Priority
-              </div>
-              <div class="col-lg-1">
-                Opened
-              </div>
-              <div class="col-lg-2">
-                Assigned
-              </div>
-              <div class="col-lg-1">
-                Store
-              </div>
-              <div class="col-lg-1">
-                -
-              </div>
-            </div>
-            <div class="row" ng-repeat="ticket in c.tickets" ng-class="{'odd':$odd}">
-              <div class="col-lg-1 col-md-3">
-                <c-ticket-status label="{{ticket.status}}"></c-ticket-status>
-              </div>
-              <div class="col-lg-5 col-md-9">
-                <a ui-sref="view-ticket({ticketId:c.tickets.indexOf(ticket)})">{{ticket.subject}}</a>
-              </div>
-              <div class="col-lg-1">
-                {{ticket.priority}}
-              </div>
-              <div class="col-lg-1">
-                {{ticket.dateCreated}}
-              </div>
-              <div class="col-lg-2">
-                {{ticket.assigned}}
-              </div>
-              <div class="col-lg-1">
-                {{ticket.store}}
-              </div>
-              <div class="col-lg-1 col-xs-6">
-                <button class="btn btn-sm btn-default btn-inline"><i class="fa fa-cog"></i> Actions</button>
-              </div>
-            </div>
-          </div>
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>Status</th><th>Subject</th><th>Priority</th><th>Opened</th><th>Customer</th><th>Assigned</th><th>Store</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="ticket in c.tickets" ng-class="{'odd':$even}">
+                <td><c-ticket-status label="{{ticket.status}}"></c-ticket-status></td>
+                <td><a ui-sref="view-ticket({ticketId:c.tickets.indexOf(ticket)})">{{ticket.subject}}</a></td>
+                <td>{{ticket.priority}}</td>
+                <td>{{ticket.dateCreated}}</td>
+                <td><a ui-sref="view-customer">{{ticket.customer}}</a></td>
+                <td>{{ticket.assigned}}</td>
+                <td>{{ticket.store}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

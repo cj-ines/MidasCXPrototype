@@ -150,7 +150,7 @@ div.cards .row {
 .view-ticket {
 	font-size: 11pt;
 }
-.view-ticket div { 
+.view-ticket div {
 	margin-top: 5px;
 }
 
@@ -192,11 +192,11 @@ div.cards .row {
 }
 
 .customer-details {
-	
+
 }
 
 .c-list {
-	list-style-type: none; 
+	list-style-type: none;
 	padding-left: 10px;
 }
 
@@ -248,4 +248,15 @@ td.small {
 
 .tab-pill > li > a {
 	padding: 4px 15px;
+}
+
+.review-text {
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+}
+
+.wide-label {
+	padding: 2px;
+	font-size: 11pt;
+	border-radius: 15px;
 }

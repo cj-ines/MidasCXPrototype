@@ -9,11 +9,11 @@
 		scope.pageName = $state.current.name;
 
 		scope.createNpsGauge = function () {
-			chart.createHalfGauge('nps', 'NPS', 0, 100, 88, 80, '%', 250);
+			chart.createHalfGauge('nps', 'NPS', 0, 100, 88, 80, '%', 200);
 		};
 
 		scope.createCsiGauge = function () {
-			chart.createHalfGauge('csi', 'CSI', 0, 100, 72, 70, '%', 250);
+			chart.createHalfGauge('csi', 'CSI', 0, 100, 72, 70, '%', 200);
 		};
 
 		scope.createCsiRadialProgress = function () {
@@ -96,8 +96,8 @@
 
 	app.controller('PeriodScopeSelectionController', [function () {
 		var scope = this;
-		scope.options = ['Last 90 Days', 'Current Month', 'Custom'];
-		scope.customIndex = 2;
+		scope.options = ['Last 90 Days', 'Current Month', 'Year to Date', 'Custom'];
+		scope.customIndex = 3;
 		scope.active = 0;
 
 		scope.isActive = function (index) {
@@ -259,12 +259,21 @@
 		scope.activeType = '';
 		scope.activeKpi = {
 			name: 'Net Promoter Score',
-			categories: ['Promoters','Passives', 'Detractors']
+			categories: [{
+				name: 'Promoters',
+				color: '#71F787'
+			}, {
+				name: 'Passives',
+				color: '#F4F771'
+			}, {
+				name: 'Detractors',
+				color: '#FF5953'
+			}]
 		};
 
 		scope.types = [{
 			name: 'Type of work',
-			categories: ['Brakes', 'LOF', 'Exhaust', 'SSP', 'Tires', 'Tire Service']
+			categories: ['Brakes', 'LOF', 'Exhaust', 'SSP', 'Tires & Tire Service']
 		}, {
 			name: 'Amount spent',
 			categories: ['<50$', '<100$', '<200%']
@@ -278,10 +287,25 @@
 
 		scope.kpis = [{
 			name: 'Net Promoter Score',
-			categories: ['Promoters','Passives', 'Detractors']
+			categories: [{
+				name: 'Promoters',
+				color: '#71F787'
+			}, {
+				name: 'Passives',
+				color: '#F4F771'
+			}, {
+				name: 'Detractors',
+				color: '#FF5953'
+			}]
 		}, {
 			name: 'Customer Satisfaction Index',
-			categories: ['Satisfied', 'Unsatisfied']
+			categories: [{
+				name: 'Satisfied',
+				color: '#71F787'
+			}, {
+				name:  'Unsatisfied',
+				color: '#FF5953'
+			}]
 		}];
 
 		scope.setActiveType = function (type) {
@@ -306,8 +330,9 @@
 			var data = [], categories = [];
 			scope.activeKpi.categories.forEach(function (category) {
 				data.push({
-					name: category,
-					data: generateRandomData(scope.activeType.categories.length)
+					name: category.name,
+					data: generateRandomData(scope.activeType.categories.length),
+					color: category.color
 				});
 			});
 
@@ -326,6 +351,14 @@
             return numbers;
         };
 
+	}]);
+
+	app.controller('ReviewTrackerController', ['ReviewsService', '$http', function (reviews, $http) {
+		var scope = this;
+		
+		reviews.fetchAll().success(function (data) {
+			scope.reviews = data;
+		});
 	}]);
 
 }());

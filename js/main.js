@@ -20,7 +20,8 @@
       })
       .state('review-tracker', {
         url: '/review-tracker',
-        templateUrl: 'pages/review-tracker.html'
+        templateUrl: 'pages/review-tracker.html',
+        controller: 'ReviewTrackerController as c'
       })
       .state('scores', {
         url: '/scores',

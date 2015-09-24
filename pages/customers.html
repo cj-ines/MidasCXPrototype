@@ -18,86 +18,84 @@
 	<br>
 	<div class="row">
 		<div class="col-md-12">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<table class="table table-condensed table-responsive">
-						<thead>
-							<tr>
-								<th>Customer Name</th>
-								<th>Address</th>
-								<th>Last Transaction</th>
-								<th>Last Survey Date</th>
-								<th>NPS</th>
-								<th>Satisfaction</th>
-								<th>Tickets</th>
-								<th>Survey Customer</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="customer in c.customers | filter: c.searchTerm" ng-class="{'odd':$even}">
-								<td><a ui-sref="view-customer">{{customer.name}}</a></td>
-								<td>{{customer.address.city}}</td>
-								<td>
-									{{customer.lastVisit.date | date}} at Midas {{customer.lastVisit.store}}
-								</td>
-								<td>{{customer.lastSurveyDate | date}}</td>
-								<td><c-nps-badge nps-status="{{customer.nps}}"></c-nps-badge></td>
-								<td><i class="fa fa-star fa-gold" ng-repeat="i in customer.satisfaction"></i></td>
-								<td>
-									<i class="fa fa-flag fa-grey" ng-class="{'fa-red':customer.openTicket > 0}"></i> 
-									open: {{customer.openTicket}} /
-									closed: {{customer.closeTicket}}
-								</td>
-								<td>
-									<select>
-										<option>Yes</option>
-										<option>No</option>
-									</select>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="table hidden">
-						<div class="row table-header">
-							<div class="col-sm-2">
-								Customer Name
-							</div>
-							<div class="col-sm-1">
-								Telephone
-							</div>
-							<div class="col-sm-1">
-								NPS
-							</div>
-							<div class="col-sm-1">
-								Satisfaction
-							</div>
-							<div class="col-sm-2">
-								Tickets
-							</div>
-							<div class="col-sm-2">
-								Last Transation
-							</div>
-						</div>
-						<div class="row" ng-class="{'odd': $odd}" ng-repeat="customer in c.customers | filter: c.searchTerm">
-							<div class="col-sm-2">
-								<a ui-sref="view-customer">{{customer.name}}</a>
-							</div>
-							<div class="col-sm-1">
-								{{customer.tel}}
-							</div>
-							<div class="col-sm-1">
-								<c-nps-badge nps-status="{{customer.nps}}"></c-nps-badge>
-							</div>
-							<div class="col-sm-1">
-								<i class="fa fa-star fa-gold" ng-repeat="i in customer.satisfaction"></i>
-							</div>
-							<div class="col-sm-2">
+			<div class="table-container">
+				<table class="table table-condensed table-responsive">
+					<thead>
+						<tr>
+							<th>Customer Name</th>
+							<th>Address</th>
+							<th>Last Transaction</th>
+							<th>Last Survey Date</th>
+							<th>NPS</th>
+							<th>Satisfaction</th>
+							<th>Tickets</th>
+							<th>Survey Customer</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="customer in c.customers | filter: c.searchTerm" ng-class="{'odd':$even}">
+							<td><a ui-sref="view-customer">{{customer.name}}</a></td>
+							<td>{{customer.address.city}}</td>
+							<td>
+								{{customer.lastVisit.date | date}} <br> <strong>Midas {{customer.lastVisit.store}}</strong>
+							</td>
+							<td>{{customer.lastSurveyDate | date}}</td>
+							<td><c-nps-badge nps-status="{{customer.nps}}"></c-nps-badge></td>
+							<td><i class="fa fa-star fa-gold" ng-repeat="i in customer.satisfaction"></i></td>
+							<td>
+								<i class="fa fa-flag fa-grey" ng-class="{'fa-red':customer.openTicket > 0}"></i>
 								open: {{customer.openTicket}} /
 								closed: {{customer.closeTicket}}
-							</div>
-							<div class="col-sm-2">
-								<small>{{customer.lastVisit.date | date}} at Shop {{customer.lastVisit.store}}</small>
-							</div>
+							</td>
+							<td>
+								<select>
+									<option>Yes</option>
+									<option>No</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="table hidden">
+					<div class="row table-header">
+						<div class="col-sm-2">
+							Customer Name
+						</div>
+						<div class="col-sm-1">
+							Telephone
+						</div>
+						<div class="col-sm-1">
+							NPS
+						</div>
+						<div class="col-sm-1">
+							Satisfaction
+						</div>
+						<div class="col-sm-2">
+							Tickets
+						</div>
+						<div class="col-sm-2">
+							Last Transation
+						</div>
+					</div>
+					<div class="row" ng-class="{'odd': $odd}" ng-repeat="customer in c.customers | filter: c.searchTerm">
+						<div class="col-sm-2">
+							<a ui-sref="view-customer">{{customer.name}}</a>
+						</div>
+						<div class="col-sm-1">
+							{{customer.tel}}
+						</div>
+						<div class="col-sm-1">
+							<c-nps-badge nps-status="{{customer.nps}}"></c-nps-badge>
+						</div>
+						<div class="col-sm-1">
+							<i class="fa fa-star fa-gold" ng-repeat="i in customer.satisfaction"></i>
+						</div>
+						<div class="col-sm-2">
+							open: {{customer.openTicket}} /
+							closed: {{customer.closeTicket}}
+						</div>
+						<div class="col-sm-2">
+							<small>{{customer.lastVisit.date | date}} at Shop {{customer.lastVisit.store}}</small>
 						</div>
 					</div>
 				</div>

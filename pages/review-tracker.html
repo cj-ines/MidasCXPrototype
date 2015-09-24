@@ -1,9 +1,93 @@
 <div class="page-wrapper">
 	<div class="page-header">
-		<h2>Review Tracker <c-subheader></c-subheader></h2> 
+		<h2>Review Tracker <c-subheader></c-subheader></h2>
 	</div>
 	<ol class="breadcrumb">
 		<li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 	 	<li class="active">Review Tracker</li>
 	</ol>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="table-container">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Location</th>
+							<th>Reviews</th>
+							<th>Rating</th>
+							<th>Source</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="odd">
+							<td>08/26/15</td>
+							<td>
+								<strong>Midas 2630</strong><br>
+								15230 Manchester Road, Ball...
+							</td>
+							<td>Terrible business I had work done on my 1998 VW...</td>
+							<td><c-star number=1></c-star></td>
+							<td>Midas</td>
+							<td>
+								<div class="btn-group">
+									<button class="dropdown btn btn-sm btn-default" data-toggle="dropdown">
+										No Status <i class="caret"></i>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a>Mgmt Done</a></li>
+										<li><a>Mo Mgmt</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>08/26/15</td>
+							<td>
+								<strong>Midas 2211 </strong><br>
+								15230 Manchester Road, Ball...
+							</td>
+							<td>Best place in town for servicing my car. Great attention to de...</td>
+							<td><c-star number=5></c-star></td>
+							<td>Midas</td>
+							<td>
+								<div class="btn-group">
+									<button class="dropdown btn btn-sm btn-default" data-toggle="dropdown">
+										No Status <i class="caret"></i>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a>Mgmt Done</a></li>
+										<li><a>Mo Mgmt</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr ng-repeat="review in c.reviews">
+							<td>{{review.date}}</td>
+							<td>
+								<strong>{{review.store.number}}</strong><br>
+								{{review.store.address}}
+							</td>
+							<td><p class="review-text">{{review.review}}</p></td>
+							<td><c-star number="{{review.rating}}"></c-star></td>
+							<td>Midas</td>
+							<td>
+								<div class="btn-group">
+									<button class="dropdown btn btn-sm btn-default" data-toggle="dropdown">
+										No Status <i class="caret"></i>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a>Mgmt Done</a></li>
+										<li><a>Mo Mgmt</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </div>

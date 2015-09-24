@@ -8,7 +8,7 @@
       templateUrl: 'components/perimeter-scope-selection.html'
     };
   }]);
-	
+
   app.directive('cPeriodScopeSelection', [function () {
     return {
       templateUrl: 'components/period-scope-selection.html',
@@ -16,7 +16,7 @@
       controllerAs: 'c'
     };
   }]);
-  
+
   app.directive('cMysterySelection', [function () {
     return {
       templateUrl: 'components/mystery-selection.html',
@@ -69,7 +69,7 @@
         case 'open': scope.uiClass = 'danger'; break;
         case 'closed': scope.uiClass = 'success'; break;
         case 'pending': scope.uiClass = 'warning'; break;
-        default: scope.uiClass = 'default'; 
+        default: scope.uiClass = 'default';
        }
        scope.label = attr.label;
       }
@@ -98,6 +98,21 @@
         scope.options = attr;
       }
     }
+  }]);
+
+  app.directive('cStar', [function () {
+      return {
+          scope: {
+              number: '@'
+          },
+          link: function (scope, elem, attr) {
+              var html = '', i = 0;
+              for (i = 0; i < scope.number; i++) {
+                  html = html + '<i class="fa fa-gold fa-star"></i>';
+              }
+              elem.html(html);
+          }
+      };
   }]);
 
 }());

@@ -1,25 +1,27 @@
-<table class="table">
-	<thead>
-		<tr>
-			<th>Score</th>
-			<th>Reporting Date</th>
-			<th>Location</th>
-			<th>Visit ID</th>
-			<th>Product</th>
-			<th>Report</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="visit in c.mysteryVisits" ng-class="{'odd':$even}">
-			<td class="score">{{visit.score}}</td>
-			<td>{{visit.reportDate | date: 'dd/MMM/yy'}}</td>
-			<td><a>Midas 2341</a><br><small>7710 South Autoplex Loop, Tempe, AZ 85284</small></td>
-			<td>{{visit.mysteryID}}</td>
-			<td>{{visit.visitType}}</td>
-			<td>
-				<a class="btn btn-primary btn-xs"><i class="fa fa-file-pdf-o fa-lg"></i> PDF</a>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<div class="table-container">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Score</th>
+				<th>Reporting Date</th>
+				<th>Location</th>
+				<th>Visit ID</th>
+				<th>Product</th>
+				<th>Report</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="visit in c.mysteryVisits" ng-class="{'odd':$even}">
+				<td class="score">{{visit.score}}</td>
+				<td>{{visit.reportDate | date: 'dd/MMM/yy'}}</td>
+				<td><strong>Midas 2341</strong><br><small>7710 South Autoplex Loop, Tempe...</small></td>
+				<td>{{visit.mysteryID}}</td>
+				<td>{{visit.visitType}}</td>
+				<td>
+					<a class="btn btn-primary btn-xs"><i class="fa fa-file-pdf-o fa-lg"></i> PDF</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
+

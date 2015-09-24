@@ -1,25 +1,27 @@
-<table class="table">
-	<thead>
-		<tr>
-			<th>Score (%)</th>
-			<th>Date of Call</th>
-			<th>Location</th>
-			<th>Case ID</th>
-			<th>Product</th>
-			<th>Download</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="call in c.mysteryCalls" ng-class="{'odd':$even}">
-			<td class="score">{{call.overall |number: 1}}</td>
-			<td>{{call.dateOfCall| date: 'dd/MMM/yy'}}</td>
-			<td><a>Midas 2341</a><br><small>7710 South Autoplex Loop, Tempe, AZ 85284</small></td>
-			<td>{{call.caseId}}</td>
-			<td>{{call.product}}</td>
-			<td>
-				<a class="btn btn-primary btn-xs"><i class="fa fa-lg fa-file-pdf-o"></i> PDF</a>
-				<a class="btn btn-primary btn-xs"><i class="fa fa-lg fa-file-audio-o"></i> MP3</a>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<div class="table-container">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Score (%)</th>
+				<th>Date of Call</th>
+				<th>Location</th>
+				<th>Case ID</th>
+				<th>Product</th>
+				<th>Download</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="call in c.mysteryCalls" ng-class="{'odd':$even}">
+				<td class="score">{{call.overall |number: 1}}</td>
+				<td>{{call.dateOfCall| date: 'dd/MMM/yy'}}</td>
+				<td><a>Midas 2341</a><br><small>7710 South Autoplex Loop, Tempe, AZ 85284</small></td>
+				<td>{{call.caseId}}</td>
+				<td>{{call.product}}</td>
+				<td>
+					<a class="btn btn-primary btn-xs"><i class="fa fa-lg fa-file-pdf-o"></i> PDF</a>
+					<a class="btn btn-primary btn-xs"><i class="fa fa-lg fa-file-audio-o"></i> MP3</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
